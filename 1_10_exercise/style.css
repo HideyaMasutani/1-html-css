@@ -1,0 +1,116 @@
+/*フレックスボックス CSSで実装できる柔軟なレイアウトの指定方法
+display: flex で要素を横並びに
+/display: inline-block
+ font-size: 0;/
+/<div style="float: left;/
+などでも代用できる*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 50px;
+  background-color: #ff9a4b;
+}
+
+main {
+  width: 100%;
+  margin: 50px auto;
+  display: flex;
+}
+
+.step-box {
+  width: 90%;
+  margin-right: 30px;
+  padding: 10px;
+  position: relative;
+  background-color: #eee;
+}
+
+.step-box:last-child {
+  margin-right: 0;
+}
+
+.step-img1 {
+  height: 150px;
+  background-image: url(img/flow01.png);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-img2 {
+  height: 150px;
+  background-image: url(img/flow02.png);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-img3 {
+  height: 150px;
+  background-image: url(img/flow03.png);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-num {
+  padding: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff9a4b;
+  color: #fff;
+}
+
+.title {
+  margin: 15px 0 5px;
+}
+
+footer {
+  height: 50px;
+  background-color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    display: block;
+  }
+  .step-box {
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+  .step-box:last-child {
+    margin: 0 auto;
+  }
+}
+
+/*メディアクエリの設定
+
+@media screen and (max-width: 425px) {
+  セレクタ {      /* 例です 
+    color: xxxx;  /* 例です 
+    width: xxpx;  /* 例です 
+  }
+}
+
+1.width: 100%
+2.flex→block
+に変更
+*/
+
+/*セレクタ　{position: 値}
+要素の位置を20pxだけ右に動かす！」というようなことができたり
+要素の上に別の要素を重ねてのせることができたり
+また画面の決まった位置に要素を固定して表示させることができたり
+
+static：初期値。指定することはほとんどない
+relative：現在の位置を基準に相対的な位置を決める
+absolute：親要素を基準に絶対的な位置を決める
+fixed：画面のきまった位置に固定する
+
+親要素、子要素ともに左上の座標が基準値
+top：基準の上からの距離
+bottom：下からの距離
+left：左からの距離
+right：右からの距離*/
